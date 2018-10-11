@@ -7,6 +7,96 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button x:Name="RollBttn" Content="Roll" HorizontalAlignment="Left" Margin="147,267,0,0" VerticalAlignment="Top" Width="111" Click="RollBttn_Click"/>
+        <Grid HorizontalAlignment="Left" Height="279" Margin="537,84,0,0" VerticalAlignment="Top" Width="195" ShowGridLines="true" MouseLeftButtonDown="cmp1_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="86*"/>
+                <ColumnDefinition Width="56*"/>
+                <ColumnDefinition Width="53*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Player"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Text="Computer"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Ones"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Twos"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Threes"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Fours"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Fives"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Sixes"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Sum"/>
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Bonus"/>
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Three of a kind"/>
+            <TextBlock Grid.Row="10" Grid.Column="0" Text="Four of a kind"/>
+            <TextBlock Grid.Row="11" Grid.Column="0" Text="Full house"/>
+            <TextBlock Grid.Row="12" Grid.Column="0" Text="Small Straight"/>
+            <TextBlock Grid.Row="13" Grid.Column="0" Text="Large Straight"/>
+            <TextBlock Grid.Row="14" Grid.Column="0" Text="Chance"/>
+            <TextBlock Grid.Row="15" Grid.Column="0" Text="YAHTZEE"/>
+            <TextBlock Grid.Row="16" Grid.Column="0" Text="Total score"/>
+
+            <TextBlock x:Name="player1" Grid.Row="1" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown" />
+            <TextBlock x:Name="player2" Grid.Row="2" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown" />
+            <TextBlock x:Name="player3" Grid.Row="3" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player4" Grid.Row="4" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player5" Grid.Row="5" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player6" Grid.Row="6" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="sum" Grid.Row="7" Grid.Column="1" Text=""/>
+            <TextBlock x:Name="bonus" Grid.Row="8" Grid.Column="1" Text="" />
+            <TextBlock x:Name="player7" Grid.Row="9" Grid.Column="2" Text=""   MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player8" Grid.Row="10" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player9" Grid.Row="11" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player10" Grid.Row="12" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player11" Grid.Row="13" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player12" Grid.Row="14" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="player13" Grid.Row="15" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="totalScore" Grid.Row="16" Grid.Column="1" Text=""/>
+                                                               
+            <TextBlock x:Name="cmp1" Grid.Row="1" Grid.Column="2" Text="" />
+            <TextBlock x:Name="cmp2" Grid.Row="2" Grid.Column="2" Text="" />
+            <TextBlock x:Name="cmp3" Grid.Row="3" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp4" Grid.Row="4" Grid.Column="2" Text="" />
+            <TextBlock x:Name="cmp5" Grid.Row="5" Grid.Column="2" Text="" />
+            <TextBlock x:Name="cmp6" Grid.Row="6" Grid.Column="2" Text="" />
+            <TextBlock x:Name="sumCmp" Grid.Row="7" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="bonusCmp" Grid.Row="8" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp7" Grid.Row="9" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp8" Grid.Row="10" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp9" Grid.Row="11" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp10" Grid.Row="12" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp11" Grid.Row="13" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp12" Grid.Row="14" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="cmp14" Grid.Row="15" Grid.Column="2" Text=""/>
+            <TextBlock x:Name="totalScoreCmp" Grid.Row="16" Grid.Column="1" Text=""/>
+        </Grid>
+
+        <TextBox x:Name="box1" HorizontalAlignment="Left" Height="23" Margin="70,199,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="33"/>
+        <TextBox x:Name="box2" HorizontalAlignment="Left" Height="23" Margin="125,199,0,0" TextWrapping="Wrap" Text="2" VerticalAlignment="Top" Width="37"/>
+        <TextBox x:Name="box3" HorizontalAlignment="Left" Height="23" Margin="181,199,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top" Width="34"/>
+        <TextBox x:Name="box4" HorizontalAlignment="Left" Height="23" Margin="235,199,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="38"/>
+        <TextBox x:Name="box5" HorizontalAlignment="Left" Height="23" Margin="292,199,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="38"/>
         
+        <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="70,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="33"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="125,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="37"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="181,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="34"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="235,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="38"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="292,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="38"/>-->
     </Grid>
 </Window>
