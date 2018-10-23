@@ -8,7 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button x:Name="RollBttn" Content="Roll" HorizontalAlignment="Left" Margin="147,267,0,0" VerticalAlignment="Top" Width="111" Click="RollBttn_Click"/>
-        <Grid HorizontalAlignment="Left" Height="279" Margin="537,84,0,0" VerticalAlignment="Top" Width="195" ShowGridLines="true" MouseLeftButtonDown="cmp1_MouseLeftButtonDown">
+        <Grid HorizontalAlignment="Left" Height="279" Margin="537,84,0,0" VerticalAlignment="Top" Width="195" ShowGridLines="true">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="86*"/>
                 <ColumnDefinition Width="56*"/>
@@ -60,13 +60,13 @@
             <TextBlock x:Name="player6" Grid.Row="6" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
             <TextBlock x:Name="sum" Grid.Row="7" Grid.Column="1" Text=""/>
             <TextBlock x:Name="bonus" Grid.Row="8" Grid.Column="1" Text="" />
-            <TextBlock x:Name="player7" Grid.Row="9" Grid.Column="2" Text=""   MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="player8" Grid.Row="10" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="player9" Grid.Row="11" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="player10" Grid.Row="12" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="player11" Grid.Row="13" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="player12" Grid.Row="14" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="player13" Grid.Row="15" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="ThreeOfAKind" Grid.Row="9" Grid.Column="2" Text=""   MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="FourOfAKind" Grid.Row="10" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="FullHouse" Grid.Row="11" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="SmallStraight" Grid.Row="12" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="LargeStraight" Grid.Row="13" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="Chance" Grid.Row="14" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="YAHTZEE" Grid.Row="15" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
             <TextBlock x:Name="totalScore" Grid.Row="16" Grid.Column="1" Text=""/>
                                                                
             <TextBlock x:Name="cmp1" Grid.Row="1" Grid.Column="2" Text="" />
@@ -93,6 +93,10 @@
         <TextBox x:Name="box4" HorizontalAlignment="Left" Height="23" Margin="235,199,0,0" TextWrapping="Wrap" Text="4" VerticalAlignment="Top" Width="38"/>
         <TextBox x:Name="box5" HorizontalAlignment="Left" Height="23" Margin="292,199,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="38"/>
         
+        <Button Content="Button" HorizontalAlignment="Left" Margin="70,133,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="23" Margin="268,130,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="62"/>
+        <Label Content="rolls" HorizontalAlignment="Left" Margin="205,130,0,0" VerticalAlignment="Top"/>
+
         <!--<TextBox HorizontalAlignment="Left" Height="23" Margin="70,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="33"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="125,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="37"/>
         <TextBox HorizontalAlignment="Left" Height="23" Margin="181,135,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="34"/>
