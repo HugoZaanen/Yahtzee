@@ -23,7 +23,7 @@ namespace Yahtzee
     {
         
         int[] nums = new int[5];
-        int numRolls = 1;
+        int numRolls = 0;
         
         public MainWindow()
         {
@@ -44,11 +44,11 @@ namespace Yahtzee
                 Random rand3 = new Random();
                 Random rand4 = new Random();
 
-                int num =  1;//rand.Next(1, 6);
-                int num1 = 2;//rand.Next(1, 6);
-                int num2 = 3;//rand.Next(1, 6);
-                int num3 = 4;//rand.Next(1, 6);
-                int num4 = 5;//rand.Next(1, 6);
+                int num =  rand.Next(1, 6);
+                int num1 = rand.Next(1, 6);
+                int num2 = rand.Next(1, 6);
+                int num3 = rand.Next(1, 6);
+                int num4 = rand.Next(1, 6);
 
                 nums[0] = num;
                 nums[1] = num1;
@@ -100,11 +100,14 @@ namespace Yahtzee
                 block.Text = "" + ScoreCalculator.CountSix(nums);
             }
             else if(block.Name == "ThreeOfAKind")
-            {
-                
+            {              
                 if (ScoreCalculator.Toak(nums))
                 {
                     block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                }
+                else
+                {
+                    block.Text = "0";
                 }
             }
             else if (block.Name == "FourOfaKind")
@@ -112,6 +115,10 @@ namespace Yahtzee
                 if(ScoreCalculator.Foak(nums))
                 {
                     block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                }
+                else
+                {
+                    block.Text = "0";
                 }
             }
             else if (block.Name == "FullHouse")
@@ -136,7 +143,7 @@ namespace Yahtzee
                     block.Text = "0";
                 }
             }
-            else if (block.Name == "BigStraight")
+            else if (block.Name == "LargeStraight")
             {
                 if(ScoreCalculator.BigStraight(nums))
                 {
@@ -162,6 +169,8 @@ namespace Yahtzee
                     block.Text = "" + 0;
                 }
             }
+
+            numRolls = 0;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
