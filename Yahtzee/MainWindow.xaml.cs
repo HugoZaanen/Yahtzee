@@ -44,11 +44,11 @@ namespace Yahtzee
                 Random rand3 = new Random();
                 Random rand4 = new Random();
 
-                int num = rand.Next(1, 6);
-                int num1 = rand.Next(1, 6);
-                int num2 = rand.Next(1, 6);
-                int num3 = rand.Next(1, 6);
-                int num4 = rand.Next(1, 6);
+                int num =  1;//rand.Next(1, 6);
+                int num1 = 2;//rand.Next(1, 6);
+                int num2 = 3;//rand.Next(1, 6);
+                int num3 = 4;//rand.Next(1, 6);
+                int num4 = 5;//rand.Next(1, 6);
 
                 nums[0] = num;
                 nums[1] = num1;
@@ -71,9 +71,9 @@ namespace Yahtzee
 
             int num1 = Int32.Parse(box1.Text);
             int num2 = Int32.Parse(box2.Text);
-            int num3 = Int32.Parse(box2.Text);
-            int num4 = Int32.Parse(box2.Text);
-            int num5 = Int32.Parse(box2.Text);
+            int num3 = Int32.Parse(box3.Text);
+            int num4 = Int32.Parse(box4.Text);
+            int num5 = Int32.Parse(box5.Text);
             
             if(block.Name == "player1" )
             {
@@ -97,47 +97,76 @@ namespace Yahtzee
             }
             else if(block.Name == "player6")
             {
-                block.Text = "" + ScoreCalculator.CountOnes(nums);
+                block.Text = "" + ScoreCalculator.CountSix(nums);
             }
-            else if(block.Name == "TwoOfaKind")
+            else if(block.Name == "ThreeOfAKind")
             {
-
+                
+                if (ScoreCalculator.Toak(nums))
+                {
+                    block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                }
             }
             else if (block.Name == "FourOfaKind")
             {
-
+                if(ScoreCalculator.Foak(nums))
+                {
+                    block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                }
             }
             else if (block.Name == "FullHouse")
             {
-
+                if (ScoreCalculator.FullHouse(nums))
+                {
+                    block.Text = "25";
+                }
+                else
+                {
+                    block.Text = "0";
+                }
             }
             else if (block.Name == "SmallStraight")
             {
-
+                if (ScoreCalculator.SmallStraight(nums))
+                {
+                    block.Text = "25";
+                }
+                else
+                {
+                    block.Text = "0";
+                }
             }
             else if (block.Name == "BigStraight")
             {
-
+                if(ScoreCalculator.BigStraight(nums))
+                {
+                    block.Text = "" + 40;
+                }
+                else
+                {
+                    block.Text = "0";
+                }
             }
             else if (block.Name == "Chance")
             {
-
+                block.Text = "" + ScoreCalculator.CountNumbers(nums);
             }
             else if (block.Name == "YAHTZEE")
             {
-
+                if (ScoreCalculator.Yahtzee(nums))
+                {
+                    block.Text = "" + 50;
+                }
+                else
+                {
+                    block.Text = "" + 0;
+                }
             }
-
-            //block.Text = "" + (num1 + num2 + num3 + num4 + num5);
-
-            block.IsEnabled = false;
-             numRolls = 1;
-             txtBox.Text = "" + numRolls;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Array.Sort<int>(nums);
-        }        
+        }
     }
 }

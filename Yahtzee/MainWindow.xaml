@@ -60,8 +60,8 @@
             <TextBlock x:Name="player6" Grid.Row="6" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
             <TextBlock x:Name="sum" Grid.Row="7" Grid.Column="1" Text=""/>
             <TextBlock x:Name="bonus" Grid.Row="8" Grid.Column="1" Text="" />
-            <TextBlock x:Name="ThreeOfAKind" Grid.Row="9" Grid.Column="2" Text=""   MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
-            <TextBlock x:Name="FourOfAKind" Grid.Row="10" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="ThreeOfAKind" Grid.Row="9" Grid.Column="1" Text=""   MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
+            <TextBlock x:Name="FourOfAKind" Grid.Row="10" Grid.Column="1" Text=""   MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
             <TextBlock x:Name="FullHouse" Grid.Row="11" Grid.Column="1" Text=""  MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
             <TextBlock x:Name="SmallStraight" Grid.Row="12" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
             <TextBlock x:Name="LargeStraight" Grid.Row="13" Grid.Column="1" Text="" MouseLeftButtonDown="player1_MouseLeftButtonDown"/>
