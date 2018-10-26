@@ -24,11 +24,26 @@ namespace Yahtzee
         
         int[] nums = new int[5];
         int numRolls = 0;
-        
+        bool diceOn = false;
+
+        bool halt1 = false;
+        bool halt2 = false;
+        bool halt3 = false;
+        bool halt4 = false;
+        bool halt5 = false;
+
+        int num = 0;
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+        int num4 = 0;
+
         public MainWindow()
         {
             InitializeComponent();
             txtBox.Text = "" + numRolls;
+
+            
         }
                
         private void RollBttn_Click(object sender, RoutedEventArgs e)
@@ -44,11 +59,27 @@ namespace Yahtzee
                 Random rand3 = new Random();
                 Random rand4 = new Random();
 
-                int num =  rand.Next(1, 6);
-                int num1 = rand.Next(1, 6);
-                int num2 = rand.Next(1, 6);
-                int num3 = rand.Next(1, 6);
-                int num4 = rand.Next(1, 6);
+                if (!halt1)
+                {
+                    num = rand.Next(1, 6);
+                }
+
+                if (!halt2)
+                {
+                    num1 = rand.Next(1, 6);
+                }
+                if (!halt3)
+                {
+                    num2 = rand.Next(1, 6);
+                }
+                if (!halt4)
+                {
+                    num3 = rand.Next(1, 6);
+                }
+                if (!halt5)
+                {
+                    num4 = rand.Next(1, 6);
+                }
 
                 nums[0] = num;
                 nums[1] = num1;
@@ -176,6 +207,66 @@ namespace Yahtzee
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Array.Sort<int>(nums);
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if (!halt1)
+            {
+                halt1 = true;
+            }
+            else
+            {
+                halt1 = false;
+            }
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            if (!halt2)
+            {
+                halt2 = true;
+            }
+            else
+            {
+                halt2 = false;
+            }
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            if (!halt3)
+            {
+                halt3 = true;
+            }
+            else
+            {
+                halt3 = false;
+            }
+        }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            if (!halt4)
+            {
+                halt4 = true;
+            }
+            else
+            {
+                halt4 = false;
+            }
+        }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            if (!halt5)
+            {
+                halt5 = true;
+            }
+            else
+            {
+                halt5 = false;
+            }
         }
     }
 }
