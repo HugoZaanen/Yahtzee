@@ -8,7 +8,12 @@ namespace Yahtzee
 {
     class ScoreCalculator
     {
-
+        /// <summary>
+        /// Counts the single dices
+        /// </summary>
+        /// <param name="array"></param>
+        /// <returns></returns>
+        #region Single dice count
         public static int CountOnes(int[] array)
         {
             return CountOneToSix(array, 1);
@@ -38,6 +43,7 @@ namespace Yahtzee
         {
             return CountOneToSix(array, 6);
         }
+        #endregion
 
         public static int CountOneToSix(int[] array, int number)
         {

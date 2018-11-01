@@ -31,6 +31,12 @@ namespace Yahtzee
         bool halt4 = false;
         bool halt5 = false;
 
+        bool pressed1 = false;
+        bool pressed2 = false;
+        bool pressed3 = false;
+        bool pressed4 = false;
+        bool pressed5 = false;
+
         int num = 1;
         int num1 = 1;
         int num2 = 1;
@@ -42,9 +48,21 @@ namespace Yahtzee
         public MainWindow()
         {
             InitializeComponent();
-            txtBox.Text = "" + numRolls;            
+            txtBox.Text = "" + numRolls;
+
+            hold1.IsEnabled = false;
+            hold2.IsEnabled = false;
+            hold3.IsEnabled = false;
+            hold4.IsEnabled = false;
+            hold5.IsEnabled = false;
         }
-               
+
+        /// <summary>
+        /// Button for Rolling dice
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region Roll Dice     
         private void RollBttn_Click(object sender, RoutedEventArgs e)
         {
             if (numRolls < 3)
@@ -93,10 +111,22 @@ namespace Yahtzee
                 box5.Text = "" + num4;
 
                 mouseActivate = true;
+
+                hold1.IsEnabled = true;
+                hold2.IsEnabled = true;
+                hold3.IsEnabled = true;
+                hold4.IsEnabled = true;
+                hold5.IsEnabled = true;
             }
         }
-    
+        #endregion
 
+        /// <summary>
+        ///  Clicking in player grids picks the score
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region Pick Scores
         private void player1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             if (numRolls != 0)
@@ -207,12 +237,37 @@ namespace Yahtzee
                 mouseActivate = false;
                 numRolls = 0;
                 txtBox.Text = "" + numRolls;
+
+                hold1.IsEnabled = false;
+                hold2.IsEnabled = false;
+                hold3.IsEnabled = false;
+                hold4.IsEnabled = false;
+                hold5.IsEnabled = false;
             }
         }
+        #endregion
 
-
+        /// <summary>
+        /// Hold Buttons group
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        #region Hold Buttons
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+            Button bttn = sender as Button;
+
+            if (pressed1 == false)
+            {
+                bttn.Background = Brushes.Red;
+                pressed1 = true;
+            }
+            else
+            {
+                bttn.Background = Brushes.Gray;
+                pressed1 = false;
+            }
+                
             if (numRolls != 0)
             {
                 if (!halt1)
@@ -228,6 +283,19 @@ namespace Yahtzee
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
+            Button bttn = sender as Button;
+
+            if (pressed2 == false)
+            {
+                bttn.Background = Brushes.Red;
+                pressed2 = true;
+            }
+            else
+            {
+                bttn.Background = Brushes.Gray;
+                pressed2 = false;
+            }
+
             if (numRolls != 0)
             {
                 if (!halt2)
@@ -243,6 +311,19 @@ namespace Yahtzee
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
+            Button bttn = sender as Button;
+
+            if (pressed3 == false)
+            {
+                bttn.Background = Brushes.Red;
+                pressed3 = true;
+            }
+            else
+            {
+                bttn.Background = Brushes.Gray;
+                pressed3 = false;
+            }
+
             if (numRolls != 0)
             {
                 if (!halt3)
@@ -258,6 +339,19 @@ namespace Yahtzee
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
+            Button bttn = sender as Button;
+
+            if (pressed4 == false)
+            {
+                bttn.Background = Brushes.Red;
+                pressed4 = true;
+            }
+            else
+            {
+                bttn.Background = Brushes.Gray;
+                pressed4 = false;
+            }
+
             if (numRolls != 0)
             {
                 if (!halt4)
@@ -273,6 +367,19 @@ namespace Yahtzee
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
+            Button bttn = sender as Button;
+
+            if (pressed5 == false)
+            {
+                bttn.Background = Brushes.Red;
+                pressed5 = true;
+            }
+            else
+            {
+                bttn.Background = Brushes.Gray;
+                pressed5 = false;
+            }
+
             if (numRolls != 0)
             {
                 if (!halt5)
@@ -285,5 +392,6 @@ namespace Yahtzee
                 }
             }
         }
+        #endregion
     }
 }

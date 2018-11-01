@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Yahtzee"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Yahtzee!" Height="450" Width="800">
     <Grid>
         <Button x:Name="RollBttn" Content="Roll" HorizontalAlignment="Left" Margin="150,282,0,0" VerticalAlignment="Top" Width="111" Click="RollBttn_Click"/>
         <Grid HorizontalAlignment="Left" Height="279" Margin="537,84,0,0" VerticalAlignment="Top" Width="195" ShowGridLines="true">
@@ -96,10 +96,10 @@
        
         <TextBox x:Name="txtBox" HorizontalAlignment="Left" Height="23" Margin="268,130,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="62"/>
         <Label Content="rolls" HorizontalAlignment="Left" Margin="205,130,0,0" VerticalAlignment="Top"/>
-        <Button Content="Hold" HorizontalAlignment="Left" Margin="70,240,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
-        <Button Content="Hold" HorizontalAlignment="Left" Margin="125,240,0,0" VerticalAlignment="Top" Width="37" Click="Button_Click_2"/>
-        <Button Content="Hold" HorizontalAlignment="Left" Margin="181,240,0,0" VerticalAlignment="Top" Width="34" Click="Button_Click_3"/>
-        <Button Content="Hold" HorizontalAlignment="Left" Margin="235,240,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_4"/>
-        <Button Content="Hold" HorizontalAlignment="Left" Margin="292,240,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_5"/>
+        <Button Content="Hold" x:Name="hold1" HorizontalAlignment="Left" Margin="70,240,0,0" VerticalAlignment="Top" Width="33" Click="Button_Click_1"/>
+        <Button Content="Hold" x:Name="hold2" HorizontalAlignment="Left" Margin="125,240,0,0" VerticalAlignment="Top" Width="37" Click="Button_Click_2"/>
+        <Button Content="Hold" x:Name="hold3" HorizontalAlignment="Left" Margin="181,240,0,0" VerticalAlignment="Top" Width="34" Click="Button_Click_3"/>
+        <Button Content="Hold" x:Name="hold4" HorizontalAlignment="Left" Margin="235,240,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_4"/>
+        <Button Content="Hold" x:Name="hold5" HorizontalAlignment="Left" Margin="292,240,0,0" VerticalAlignment="Top" Width="38" Click="Button_Click_5"/>
     </Grid>
 </Window>
