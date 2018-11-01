@@ -24,6 +24,7 @@ namespace Yahtzee
         
         int[] nums = new int[5];
         int numRolls = 0;
+        List<int> scoreList = new List<int>();
 
         bool halt1 = false;
         bool halt2 = false;
@@ -142,36 +143,52 @@ namespace Yahtzee
                 if (block.Name == "player1" && mouseActivate)
                 {
                     block.Text = "" + ScoreCalculator.CountOnes(nums);
+                    int num = Int32.Parse(block.Text);
+                    scoreList.Add(num);
                 }
                 else if (block.Name == "player2")
                 {
                     block.Text = "" + ScoreCalculator.CountTwos(nums);
+                    int num = Int32.Parse(block.Text);
+                    scoreList.Add(num);
                 }
                 else if (block.Name == "player3" && mouseActivate)
                 {
                     block.Text = "" + ScoreCalculator.CountThrees(nums);
+                    int num = Int32.Parse(block.Text);
+                    scoreList.Add(num);
                 }
                 else if (block.Name == "player4" && mouseActivate)
                 {
                     block.Text = "" + ScoreCalculator.CountFours(nums);
+                    int num = Int32.Parse(block.Text);
+                    scoreList.Add(num);
                 }
                 else if (block.Name == "player5" && mouseActivate)
                 {
                     block.Text = "" + ScoreCalculator.CountFives(nums);
+                    int num = Int32.Parse(block.Text);
+                    scoreList.Add(num);
                 }
                 else if (block.Name == "player6" && mouseActivate)
                 {
                     block.Text = "" + ScoreCalculator.CountSix(nums);
+                    int num = Int32.Parse(block.Text);
+                    scoreList.Add(num);
                 }
                 else if (block.Name == "ThreeOfAKind" && mouseActivate)
                 {
                     if (ScoreCalculator.Toak(nums))
                     {
                         block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                     else
                     {
                         block.Text = "0";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                 }
                 else if (block.Name == "FourOfaKind" && mouseActivate)
@@ -179,10 +196,14 @@ namespace Yahtzee
                     if (ScoreCalculator.Foak(nums))
                     {
                         block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                     else
                     {
                         block.Text = "0";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                 }
                 else if (block.Name == "FullHouse" && mouseActivate)
@@ -190,10 +211,14 @@ namespace Yahtzee
                     if (ScoreCalculator.FullHouse(nums))
                     {
                         block.Text = "25";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                     else
                     {
                         block.Text = "0";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                 }
                 else if (block.Name == "SmallStraight" && mouseActivate)
@@ -201,10 +226,14 @@ namespace Yahtzee
                     if (ScoreCalculator.SmallStraight(nums))
                     {
                         block.Text = "25";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                     else
                     {
                         block.Text = "0";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                 }
                 else if (block.Name == "LargeStraight" && mouseActivate)
@@ -212,10 +241,14 @@ namespace Yahtzee
                     if (ScoreCalculator.BigStraight(nums))
                     {
                         block.Text = "" + 40;
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                     else
                     {
                         block.Text = "0";
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                 }
                 else if (block.Name == "Chance" && mouseActivate)
@@ -227,10 +260,14 @@ namespace Yahtzee
                     if (ScoreCalculator.Yahtzee(nums))
                     {
                         block.Text = "" + 50;
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                     else
                     {
                         block.Text = "" + 0;
+                        int num = Int32.Parse(block.Text);
+                        scoreList.Add(num);
                     }
                 }
 
@@ -243,6 +280,11 @@ namespace Yahtzee
                 hold3.IsEnabled = false;
                 hold4.IsEnabled = false;
                 hold5.IsEnabled = false;
+
+                if (scoreList.Count == )
+                {
+
+                }
             }
         }
         #endregion
