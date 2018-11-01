@@ -281,9 +281,9 @@ namespace Yahtzee
                 hold4.IsEnabled = false;
                 hold5.IsEnabled = false;
 
-                if (scoreList.Count == )
+                if (scoreList.Count == 11)
                 {
-
+                    int num = scoreList.Sum();
                 }
             }
         }
