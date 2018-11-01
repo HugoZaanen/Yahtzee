@@ -24,7 +24,6 @@ namespace Yahtzee
         
         int[] nums = new int[5];
         int numRolls = 0;
-        bool diceOn = false;
 
         bool halt1 = false;
         bool halt2 = false;
@@ -32,18 +31,18 @@ namespace Yahtzee
         bool halt4 = false;
         bool halt5 = false;
 
-        int num = 0;
-        int num1 = 0;
-        int num2 = 0;
-        int num3 = 0;
-        int num4 = 0;
+        int num = 1;
+        int num1 = 1;
+        int num2 = 1;
+        int num3 = 1;
+        int num4 = 1;
+
+        bool mouseActivate = false;
 
         public MainWindow()
         {
             InitializeComponent();
-            txtBox.Text = "" + numRolls;
-
-            
+            txtBox.Text = "" + numRolls;            
         }
                
         private void RollBttn_Click(object sender, RoutedEventArgs e)
@@ -92,180 +91,198 @@ namespace Yahtzee
                 box3.Text = "" + num2;
                 box4.Text = "" + num3;
                 box5.Text = "" + num4;
+
+                mouseActivate = true;
             }
         }
     
 
         private void player1_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            TextBlock block = sender as TextBlock;
+            if (numRolls != 0)
+            {
+                TextBlock block = sender as TextBlock;
 
-            int num1 = Int32.Parse(box1.Text);
-            int num2 = Int32.Parse(box2.Text);
-            int num3 = Int32.Parse(box3.Text);
-            int num4 = Int32.Parse(box4.Text);
-            int num5 = Int32.Parse(box5.Text);
-            
-            if(block.Name == "player1" )
-            {
-                block.Text = "" + ScoreCalculator.CountOnes(nums);
-            }
-            else if(block.Name == "player2")
-            {
-                block.Text = "" + ScoreCalculator.CountTwos(nums);
-            }
-            else if(block.Name == "player3")
-            {
-                block.Text = "" + ScoreCalculator.CountThrees(nums);
-            }
-            else if(block.Name == "player4")
-            {
-                block.Text = "" + ScoreCalculator.CountFours(nums);
-            }
-            else if(block.Name == "player5")
-            {
-                block.Text = "" + ScoreCalculator.CountFives(nums);
-            }
-            else if(block.Name == "player6")
-            {
-                block.Text = "" + ScoreCalculator.CountSix(nums);
-            }
-            else if(block.Name == "ThreeOfAKind")
-            {              
-                if (ScoreCalculator.Toak(nums))
+                int num1 = Int32.Parse(box1.Text);
+                int num2 = Int32.Parse(box2.Text);
+                int num3 = Int32.Parse(box3.Text);
+                int num4 = Int32.Parse(box4.Text);
+                int num5 = Int32.Parse(box5.Text);
+
+                if (block.Name == "player1" && mouseActivate)
+                {
+                    block.Text = "" + ScoreCalculator.CountOnes(nums);
+                }
+                else if (block.Name == "player2")
+                {
+                    block.Text = "" + ScoreCalculator.CountTwos(nums);
+                }
+                else if (block.Name == "player3" && mouseActivate)
+                {
+                    block.Text = "" + ScoreCalculator.CountThrees(nums);
+                }
+                else if (block.Name == "player4" && mouseActivate)
+                {
+                    block.Text = "" + ScoreCalculator.CountFours(nums);
+                }
+                else if (block.Name == "player5" && mouseActivate)
+                {
+                    block.Text = "" + ScoreCalculator.CountFives(nums);
+                }
+                else if (block.Name == "player6" && mouseActivate)
+                {
+                    block.Text = "" + ScoreCalculator.CountSix(nums);
+                }
+                else if (block.Name == "ThreeOfAKind" && mouseActivate)
+                {
+                    if (ScoreCalculator.Toak(nums))
+                    {
+                        block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                    }
+                    else
+                    {
+                        block.Text = "0";
+                    }
+                }
+                else if (block.Name == "FourOfaKind" && mouseActivate)
+                {
+                    if (ScoreCalculator.Foak(nums))
+                    {
+                        block.Text = "" + ScoreCalculator.CountNumbers(nums);
+                    }
+                    else
+                    {
+                        block.Text = "0";
+                    }
+                }
+                else if (block.Name == "FullHouse" && mouseActivate)
+                {
+                    if (ScoreCalculator.FullHouse(nums))
+                    {
+                        block.Text = "25";
+                    }
+                    else
+                    {
+                        block.Text = "0";
+                    }
+                }
+                else if (block.Name == "SmallStraight" && mouseActivate)
+                {
+                    if (ScoreCalculator.SmallStraight(nums))
+                    {
+                        block.Text = "25";
+                    }
+                    else
+                    {
+                        block.Text = "0";
+                    }
+                }
+                else if (block.Name == "LargeStraight" && mouseActivate)
+                {
+                    if (ScoreCalculator.BigStraight(nums))
+                    {
+                        block.Text = "" + 40;
+                    }
+                    else
+                    {
+                        block.Text = "0";
+                    }
+                }
+                else if (block.Name == "Chance" && mouseActivate)
                 {
                     block.Text = "" + ScoreCalculator.CountNumbers(nums);
                 }
-                else
+                else if (block.Name == "YAHTZEE" && mouseActivate)
                 {
-                    block.Text = "0";
+                    if (ScoreCalculator.Yahtzee(nums))
+                    {
+                        block.Text = "" + 50;
+                    }
+                    else
+                    {
+                        block.Text = "" + 0;
+                    }
                 }
-            }
-            else if (block.Name == "FourOfaKind")
-            {
-                if(ScoreCalculator.Foak(nums))
-                {
-                    block.Text = "" + ScoreCalculator.CountNumbers(nums);
-                }
-                else
-                {
-                    block.Text = "0";
-                }
-            }
-            else if (block.Name == "FullHouse")
-            {
-                if (ScoreCalculator.FullHouse(nums))
-                {
-                    block.Text = "25";
-                }
-                else
-                {
-                    block.Text = "0";
-                }
-            }
-            else if (block.Name == "SmallStraight")
-            {
-                if (ScoreCalculator.SmallStraight(nums))
-                {
-                    block.Text = "25";
-                }
-                else
-                {
-                    block.Text = "0";
-                }
-            }
-            else if (block.Name == "LargeStraight")
-            {
-                if(ScoreCalculator.BigStraight(nums))
-                {
-                    block.Text = "" + 40;
-                }
-                else
-                {
-                    block.Text = "0";
-                }
-            }
-            else if (block.Name == "Chance")
-            {
-                block.Text = "" + ScoreCalculator.CountNumbers(nums);
-            }
-            else if (block.Name == "YAHTZEE")
-            {
-                if (ScoreCalculator.Yahtzee(nums))
-                {
-                    block.Text = "" + 50;
-                }
-                else
-                {
-                    block.Text = "" + 0;
-                }
-            }
 
-            numRolls = 0;
+                mouseActivate = false;
+                numRolls = 0;
+                txtBox.Text = "" + numRolls;
+            }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Array.Sort<int>(nums);
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (!halt1)
+            if (numRolls != 0)
             {
-                halt1 = true;
-            }
-            else
-            {
-                halt1 = false;
+                if (!halt1)
+                {
+                    halt1 = true;
+                }
+                else
+                {
+                    halt1 = false;
+                }
             }
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            if (!halt2)
+            if (numRolls != 0)
             {
-                halt2 = true;
-            }
-            else
-            {
-                halt2 = false;
+                if (!halt2)
+                {
+                    halt2 = true;
+                }
+                else
+                {
+                    halt2 = false;
+                }
             }
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            if (!halt3)
+            if (numRolls != 0)
             {
-                halt3 = true;
-            }
-            else
-            {
-                halt3 = false;
+                if (!halt3)
+                {
+                    halt3 = true;
+                }
+                else
+                {
+                    halt3 = false;
+                }
             }
         }
 
         private void Button_Click_4(object sender, RoutedEventArgs e)
         {
-            if (!halt4)
+            if (numRolls != 0)
             {
-                halt4 = true;
-            }
-            else
-            {
-                halt4 = false;
+                if (!halt4)
+                {
+                    halt4 = true;
+                }
+                else
+                {
+                    halt4 = false;
+                }
             }
         }
 
         private void Button_Click_5(object sender, RoutedEventArgs e)
         {
-            if (!halt5)
+            if (numRolls != 0)
             {
-                halt5 = true;
-            }
-            else
-            {
-                halt5 = false;
+                if (!halt5)
+                {
+                    halt5 = true;
+                }
+                else
+                {
+                    halt5 = false;
+                }
             }
         }
     }
